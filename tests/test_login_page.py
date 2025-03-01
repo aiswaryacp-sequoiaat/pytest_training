@@ -51,6 +51,6 @@ def test_invalid_login(browser, browser_url, invalid_credentials):
 
     # Verify error message
     error_message = WebDriverWait(browser, 5).until(EC.visibility_of_element_located((By.ID, "error")))
-    # error_message = browser.find_element(By.ID, "error")  
+
     assert error_message.is_displayed(), "Error message is not displayed!"
     assert error_message.text == "Your username is invalid!", f"Unexpected error message: {error_message.text}"
